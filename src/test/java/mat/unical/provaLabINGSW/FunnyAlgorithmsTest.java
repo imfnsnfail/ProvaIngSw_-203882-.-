@@ -48,15 +48,14 @@ public class FunnyAlgorithmsTest {
 
 	
 	@Test
-	public void selectionSortTest() {
-		
-	}
+	public void selectionSortTest() {}
 	
 	@Test
 	public void stringToIntConverterTest() {
 		String number =" -3, 500, -10, 32767";
+		String number2 ="2 3, 32768, A3,2.3";
 		assertEquals(Arrays.asList(-3,500,-10,32767),alg.stringToIntConverter(number));
-		assertNotEquals(Arrays.asList("2 3","32768","A3","2.3"),alg.stringToIntConverter(number));
+		assertNotEquals(false,alg.stringToIntConverter(number2));
 	}
 
 	@After
