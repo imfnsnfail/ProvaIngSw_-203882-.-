@@ -4,12 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import java.time.LocalDateTime;
 import java.util.Arrays;
 
 import org.joda.time.LocalTime;
 import org.junit.After;
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 
@@ -18,6 +16,7 @@ public class FunnyAlgorithmsTest {
 	
 	@BeforeClass
 	public static void prepareAll() {
+		System.out.println("BeforeClass");
 		alg= new FunnyAlgorithms();
 	}
 	@Before
@@ -36,20 +35,26 @@ public class FunnyAlgorithmsTest {
 	            assertEquals(true, alg.binarySearch(sorted,sorted[i]));
 	        }
 	    }
-	 //should Return False If Not FoundIn Sorted Array()
-	 @Test
-	 public void binarySearchTest2() {
-		 
+	
+	@Test
+	 public void swapTest() {
+	     int[] nums = {10, 15};
+	 
+	     FunnyAlgorithms.swap(nums,0,1);
+	 
+	     assertEquals(15, nums[0]);
+	     assertEquals(10, nums[1]);
 	 }
+
 	
 	@Test
-	public static void swapTest(int[] arr, int i, int j) {}
+	public void selectionSortTest() {
+		
+	}
 	
 	@Test
-	public void selectionSortTest(int[] array, int order) {}
-	
-	@Test
-	public void stringToIntConverterTest(String number) {
+	public void stringToIntConverterTest() {
+		String number =" -3, 500, -10, 32767";
 		assertEquals(Arrays.asList(-3,500,-10,32767),alg.stringToIntConverter(number));
 		assertNotEquals(Arrays.asList("2 3","32768","A3","2.3"),alg.stringToIntConverter(number));
 	}
@@ -60,10 +65,7 @@ public class FunnyAlgorithmsTest {
 		System.out.println("data e ora");
 		System.out.println(fine);
 	}
-	@AfterClass
-	public static void AfterClass() {
 
-	}
 	
 }
 
